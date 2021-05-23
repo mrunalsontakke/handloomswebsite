@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <title>
+        Southern India
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wdbstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            margin-top: 3%;
+            text-align: center;
+            font-size: 35px;
+            margin-left: 20px;
+        }
+        
+        .boxed {
+            border: 2px solid rgb(194, 194, 191);
+            margin: 3%;
+            border-style: outset;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        p {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        img {
+            width: 350px;
+            height: 350px;
+            margin-left: 20px;
+        }
+        
+        .img-fluid {
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+
+        </section>
+        {% block content %}
+        <h1>Welcome to Southern India</h1>
+        <div class="boxed">
+            <div class="text-center">
+                <h2>ANDHRA PRADESH</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\ANDHRA PRADESH1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ANDHRA PRADESH2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ANDHRA PRADESH3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Andhra Pradesh is well-known for its huge variety of traditional silk and cotton saris. Many districts in Andhra Pradesh have their own unique weaving patterns, styles and methods. Saris that are specific to a particular district are named after their
+                places of origin. Apart from the designs, the fabric that is been used in making the sari is different from one district to another, it has its own specialty and uniqueness. Here are the textiles of Andhra Pradesh.The Venkatgiri Saris,
+                known for their fine weaving, date back to early 1700 when these sarees were produced at an artisan cluster close to Nellore called Venkatgiri. The place was then known as ‘Kali Mili’ and its famous product was patronized by the Velugoti
+                Dynasty of Nellore. To understand the history of Uppada silk, one has to first trace the journey of the Jamdani weaving techniques. After a decline in the 19th century due to the industrial revolution in England. Jamdani saw a slow resurgence
+                in the 20th century. Thereafter the technique of Jamdani was introduced in Uppada in the year 1988 where it incorporated designs which were closely identified with Andhra Pradesh. This led to the birth of a new design range called the
+                Uppada silk sari. However it still took about 10years for the Uppada silk sarees to get the due recognition and popularity.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>KARNATAKA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\KARNATAKA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\KARNATAKA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\KARNATAKA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Karnataka’s foray into the textile sector has turned out to be quite a successful venture. So much so that Bangalore has earned itself the moniker of the ‘garment capital of India’. With the textile industry occupying a key position in the economy of
+                Karnataka, the state government is working towards leveraging the potential for growth of the textile sector in the state. Let us know in detail about the textile industry of Karnataka and its prospects for growth.Karnataka has a rich
+                Cultural heritage. The lineages of Indian rulers, like, Mauryas, Chalukyas, Hoysalas have left behind their embossments in various elements of culture of Karnataka. Diverse religion and languages has added up to the ethnic grandness. Apart
+                from Kannadigas, Karnataka is home to Tuluvas, Kodavas and Konkanis. Minor populations of Tibetan Buddhists and Siddhi tribes plus a few other ethnic groups also live in Karnataka. Karnataka’s art forms encompass huge ambit of majestic
+                festivals, music, drama, and royal cuisine. The vivid diversity exists in cultural aspects in terms of Cultural dress, traditional dance forms, social and cultural history, culture food, language and slangs. The traditional folk arts cover
+                the entire gamut of music, dance, drama, storytelling by itinerant troupes, etc. Yakshagana, a classical folk play, is one of the major theatrical forms of coastal Karnataka. Contemporary theatre culture in Karnataka is one of the most
+                vibrant in India with organizations like Ninasam, Ranga Shankara and Rangayana active on foundations laid down by the Gubbi Veeranna Nataka Company. Veeragase, Kamsale and Dollu Kunitha are popular dance forms. Bharatanatya also enjoys
+                wide patronage in Karnataka.</p>
+            <hr>
+            <div class="text-center">
+                <h2>KERALA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\KERALA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\KERALA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\KERALA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Kerala’s textile industry mainly located in handloom sector. Handloom fabrics of Kerala are well known for its quality and variety. Balaramapuram Sarees (a 5.5 meter long and 1.2 meter wide narrow fabric worn by ladies), Kuthampully Sarees,Kannur Shirtings
+                and furnishings, Alappuzha Coir mats,terry/Turkish towellings and carpets are not only the examples of its popularity but, of course,its traditional value.The textile products of Kerala are made of pure cotton ,coir(made from coconut fiber)
+                ,Jute,Sisal and Palm fibers.Polyester cotton blends are rarely used. Kerala’s textile industry is depended on handlooms rather than automatic looms due to its traditional nature.There are so many co.operative handloom societies run by
+                the weavers ,across Kerala.These societies supply cotton yarns(dyed/bleached),weaving accessories and other technical information required for the particular products.The weavers will produce the fabrics in hand looms, either in their
+                home or a collective weaving shed located in the weavers co.operative society itself.The looms used to weave are pit looms(A primitive loom at floor level the shedding mechanism usually located in pits and the warp yarn is stretched parallel
+                to the ground),frame looms and Jacquard/ Dobby looms.</p>
+            <hr>
+            <div class="text-center">
+                <h2>TAMIL NADU</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\TAMIL NADU1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TAMIL NADU2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TAMIL NADU3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Tamil Nadu is a southern state of India which is a land of cultural and religious heritage. Known to be one of the oldest civilizations in the world, the people of Tamil Nadu belong to the prestigious Dravidian Family. Tamil Nadu is a plethora of history
+                and beauty. It is a blend of both the ancient the modern history, which makes it a beautiful destination. Tamilians have perfected the art of spinning, weaving and chiseling over the years and their brilliance is reflected in different
+                art subjects like bronzes, sculptor works, carvings, etc. Magnificent temples represent Tamil architecture with lofty ‘gopurams’ and statues of goddesses engraved all over the edifice. Many well-known temples such as Meenakshi Amman Temple
+                and Breehadeeshwara Temple are located here which displays a grand vista of ancient Hindu mythological diversity and Tamil heritage.Tamil Nadu is hot and humid regarding climate. The clothing is suitable to the environment for the comfort
+                of living and changed according to the occasions.There are two main Tamilian Communities – “Iyer” and “Iyengar” worshippers of Lord ‘Shiva’ & Lord ‘Vishnu’ respectively. Based on these communities, their costume also differs.Tamil men
+                wear a dhoti known as Vesti, Panchkattu or Panchgacchhe. Pleats in the back known as gochi and front as Kosavam. Right side long, pleated and tucked in front. Godakattu is the cloth wrapped around the waist and two ends are tied in front
+                without formation of pleat. Paibatta is an angavastra used to cover upper body & tied at waist. They wear ‘Janoi’ a sacred thread on the left shoulder across the right hip and apply Naman with Vibhuti on forehead.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>TELANGANA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\TELANGANA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TELANGANA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TELANGANA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Telangana have huge potential in handlooms & textiles like Pochampally, Ikkat Handloom products, Siddipet Handlooms, Nayaranpet Handlooms, Gadwal Handlooms, Banjara Embroidery and Cotton Durries. Handloom industry occupies a unique place in the country
+                for its exclusive arts and artefacts of handloom weavers. Ethnic handloom design of Telangana state has been promoting the cultural glory of the State over the years. A significant portion of State workforce is dependent on handloom industry
+                for employment. Telangana also has huge potential in traditional arts and crafts like Cheriyal Paintings, Nirmal Paintings, Batik Paintings, Bidiri Crafts, Pemberti Brassware, Dokra Castings, Black metal ware, Wooden carvings of Nizamabad
+                Panels, Nirmal printed furniture, Red Sanders and also Nirmal Toys amongst others.Hindu and Christian men can be seen in Dhoti and Kurta. Men in Muslim community wear pajamas instead of dhoti with a small fez cap over their head. The Hyderabadi
+                Sherwani used to be the dress of choice of the Nizam of Hyderabad and Hyderabadi nobles. Sherwani is usually worn by the groom during the wedding ceremonies.The most common apparel worn by women is saree along with langa voni, salwar kameez
+                and churidar. Women from all communities can be seen wearing different patterns of sarees. Even Muslim and Christian women wear saris. Although the traditional outfit of Muslim women in Telangana is salwar kameez, they give a try to other
+                dresses too. Be it villages or cities, many women can be found wearing sarees. However, due to westernization young girls like to wear modern dresses like skirts, jeans, tops, leggings, etc. Telangana holds its tradition simultaneously
+                advancing and adopting the current fashion trend.</p>
+        </div>
+        {% endblock %}
+        <br>
+</body>
+
+</html>

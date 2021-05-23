@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <title>
+        Admin - India Handlooms website
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loginstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    body {
+        background-image: url(../static/images/img/admin.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+<body style="background-color:rgb(243, 252, 253);">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">⮝</button>
+    <style>
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        #myBtn:hover {
+            background-color: rgb(0, 132, 255);
+        }
+    </style>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    <img src="\static\images\icon\logo1.png" alt="" width="60" height="60"> India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <br><br><br><br>
+        <section>
+            <style>
+                h3 {
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    text-align: center;
+                    font-weight: bold;
+                    background-size: contain;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    font-size: 35px;
+                }
+            </style>
+            <br>
+            <div class="container">
+                <h3>Feedback</h3>
+                <table class="table">
+                    <style>
+                        table,
+                        th,
+                        td,
+                        thead {
+                            text-align: center;
+                            border: 3px solid black;
+                            font-family: 'Times New Roman', Times, serif;
+                            background-color: rgb(248, 250, 246);
+                            font-size: large;
+                            font-weight: 900;
+                            font-style: italic;
+                            border-collapse: collapse;
+                        }
+                    </style>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for f in feedback %}
+                        <tr>
+                            <td>{{ f.id }}</td>
+                            <td>{{ f.name }}</td>
+                            <td>{{ f.email }}</td>
+                            <td>{{ f.contact }}</td>
+                            <td>{{ f.role }}</td>
+                            <td>{{ f.message }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="container">
+                <h3>Order</h3>
+                <table class="table">
+                    <style>
+                        table,
+                        th,
+                        td,
+                        thead {
+                            text-align: center;
+                            border: 3px solid black;
+                            font-family: 'Times New Roman', Times, serif;
+                            background-color: rgb(248, 250, 246);
+                            font-size: large;
+                            font-weight: 900;
+                            font-style: italic;
+                            border-collapse: collapse;
+                        }
+                    </style>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Company name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Product name</th>
+                            <th scope="col">quantity</th>
+                            <th scope="col">price</th>
+                            <th scope="col">status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for o in order %}
+                        <tr>
+                            <td>{{ o.id }}</td>
+                            <td>{{ o.name }}</td>
+                            <td>{{ o.email }}</td>
+                            <td>{{ o.contact }}</td>
+                            <td>{{ o.company_Name }}</td>
+                            <td>{{ o.address }}</td>
+                            <td>{{ o.product_name }}</td>
+                            <td>{{ o.quantity }}</td>
+                            <td>{{ o.price }}</td>
+                            <td>{{ o.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <h3>Weavers</h3>
+            <div class="container" style="margin-left: 20px; padding-top: 0px; margin-right: 30px;">
+
+                <table class="table">
+                    <style>
+                        table,
+                        th,
+                        td,
+                        thead {
+                            text-align: center;
+                            border: 3px solid black;
+                            font-family: 'Times New Roman', Times, serif;
+                            background-color: rgb(248, 250, 246);
+                            font-size: large;
+                            font-weight: 900;
+                            font-style: italic;
+                            border-collapse: collapse;
+                        }
+                    </style>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Company name</th>
+                            <th scope="col">Product name</th>
+                            <th scope="col">State</th>
+                            <th scope="col">More info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for w in user %}
+                        <tr>
+                            <td>{{ w.id }}</td>
+                            <td>{{ w.first_name }}</td>
+                            <td>{{ w.email }}</td>
+                            <td>{{ w.contact }}</td>
+                            <td>{{ w.company_Name }}</td>
+                            <td>{{ w.product_name }}</td>
+                            <td>{{ w.state }}</td>
+                            <td><button type="button" class="btn btn-primary" style=" outline-color: rgb(250, 244, 244);"><a style="color: white;" href="/state/{{w.state}}/info/{{w.id}}">More Info</a</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </header>
+    </body>
+</html>

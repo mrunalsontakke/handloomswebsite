@@ -1,0 +1,255 @@
+<html>
+
+<head>
+    <title>
+        Northern India
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wdbstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            margin-top: 3%;
+            text-align: center;
+            font-size: 35px;
+            margin-left: 20px;
+        }
+        
+        .boxed {
+            border: 2px solid rgb(194, 194, 191);
+            margin: 3%;
+            border-style: outset;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        p {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        img {
+            width: 350px;
+            height: 350px;
+            margin-left: 20px;
+        }
+        
+        .img-fluid {
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+
+        </section>
+        {% block content %}
+        <h1>Welcome to Northern India</h1>
+        <div class="boxed">
+            <div class="text-center">
+                <h2>RAJASTHAN</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\RAJASTHAN1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\RAJASTHAN2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\RAJASTHAN3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Rajasthan’s textiles represent an amalgamation of generations of experimentation with fabric, handicraft skills and a sharp eye for detail. These textiles, woven with incredible precision, are the result of an oral tradition that has passed down generations
+                and been honed with finesse and purpose. It is always advisable to “buy local” – i.e. visit small villages instead of buying from Rajasthan’s urban shopping centres, as this is where you can get the kind of fabric, weaving and embroidery
+                that is impossible to get anywhere else in the world. Rajasthan had mastered fabric dyeing much before America’s fascination with hippie tie and dye T patterns. Tiny, incredibly precise designs are achieved in cloth by plucking and tying
+                a thread to reveal artwork in bright shades of vermillion, saffron, emerald, sapphire, and yellow yields. Along with style, there is also symbolism here – red can represent a Hindu bride, and yellow signifies maternity. Bandhini use is
+                common on turbans, dupattas, and sarees, in accompaniment with embroidery, mirror-work, and appliqué. Named after flowing waves of water, Leheriya work focuses on clear patterns, created on thin cotton or silk cloth, for turbans or saris.
+                Authentic Leheriya fabric is sold with the knots (used for dyeing) still in place.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>UTTAR PRADESH</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\UTTAR PRADESH1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\UTTAR PRADESH2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\UTTAR PRADESH3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Famous as shadow work, Chikankari embroidery is a very delicate and intricate work from the city of Lucknow. A skill more than 200 years old, embroidery is famous for its timeless grace and gossamer delicacy. Also known as Chikan, the embroidery is traditionally
+                done using a white untwisted cotton thread on colourless muslin popularly known as Tanzen (the Muslim from Dacca). This form of embroidery came to India from Persia with Noor Jehan, the queen of the Mughal Emperor Jehangir. It is also
+                said that the word chikan is a derivative from the Persian word ‘chikan meaning drapery. The craft flourished under the benign nawab influence and later with the British influence designs became more formal resulting in an export market
+                in Europe and England. Originally, chikan embroidery was done with the untwisted white cotton thread on soft, white cotton fabric like muslin or cambric. It was sometimes done on the net to produce a kind of lace. Today chikan work is
+                not only done with coloured threads but on all kinds of fabrics like silk, crepe, georgette, organdie chiffon, and tassar.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>HIMACHAL PRADESH</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\HIMACHAL PRADESH1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\HIMACHAL PRADESH2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\HIMACHAL PRADESH3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Himachal Pradesh is one state that has converted itself from being the most backward state of India to one of the most advanced states in the country. Such positive growth is being able to see in this country. Furthermore, Himachal Pradesh has become
+                the economically fourth most valuable state of India. Tourism is a very major contributor to the Himachal Pradesh economy and growth. It is also known for its best adventure tourism activities like ice skating in the Shimla area, paragliding
+                Solang valley, rafting in Kullu, skiing in Manali, Rohtang boating in Bilaspur and trekking, horse riding and fishing in different parts of the state. A variety of fabric is also famous in this state. Chamba rumal, thapada, etc are some
+                type of wholesale fabrics that is being famous in Himachal Pradesh. It is not necessary to buy these fabrics from there only. There are many online wholesalers also who provide everything online. For example, there is an online company
+                called “WholesaleBox”, it provides all kinds of clothing, fabrics, accessories at the lowest factory price. Retailers can also buy these fabrics from there.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>UTTRAKHAND</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\UTTRAKHAND1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\UTTRAKHAND2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\UTTRAKHAND3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                The charming beauty of the valleys of Uttarakhand is complemented by the elegant and colourful crafts of Garhwal and Kumaon. Weaving is undoubtedly one of those traditional crafts that are deeply connected with the lives of the local hill people and their
+                rich cultural heritage. Mainly famous for its woollen fabrics, the Himalayan weaving tradition in Uttarakhand also produces beautiful cotton and silk goods. Largely, it is the Bhotia Himalayan weavers community that dominates the weaving
+                industry of Uttarakhand. Apart from the Bhotiyas, there are also other weaver communities like the Rompas and the Kolees in the area. The industry turns out a great variety of textile products ranging from routine objects like socks, caps,
+                scarves, sweaters, mufflers etc. to more specialized items like shawls or carpets. The serenity and the grace of the Himalayas are perfectly matched by the traditional textile designs which are handed down from generation to generation.
+                At times, the motifs used by the traditional weavers of Uttarakhand show interesting influences of the neighbouring states of Tibet, Nepal and China. However, despite these influences, the traditional textiles of Uttarakhand always reflect
+                a unique ethnic character of their own.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>PUNJAB</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\PUNJAB1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\PUNJAB2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\PUNJAB3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Phulkari, which means ‘flower craft’ has been nestled in the culture of Punjab that goes back to the 15th century. Its bright colours embroidered in a manner that speaks volumes about the women and their clothing desires. The fabric on which Phulkari
+                embroidery was done was handspun khaddar (a hand-loomed plain-weave cotton fabric). It famously appeared in the tear-jerking love story of Heer-Ranjha by Waris Shah and the creative art of embroidery has not changed its technique since
+                the introduction. Women of all ages and classes don this cloth that reflects their life through the various colours entrenched on it. It can be woven on shawls, Kurtas, Dupattas, and Lehengas with eye-catching blends of intricate patterns
+                and is worn on all occasions by the women of traditional Punjab.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>HARYANA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\HARYANA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\HARYANA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\HARYANA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                The state of Haryana is steeped in the rich cultural history that contributed to shaping present-day India. The name ‘Haryana’ derives from the Sanskrit words ‘Hari’, the 650th moniker for the Hindu God Vishnu, and ‘Ayana, which translates as ‘home’ –
+                ‘Haryana’ can be understood to mean ‘the Abode of God’. Today, Haryana is one of the most economically developed areas in South Asia. This is greatly owed to innovations in the state’s agricultural, manufacturing, information technology
+                and automobile industry. The location is home to major sites of the ancient Indus Valley Civilisation, Vedic Civilisation and legendary battles. The most well-known battle is the Kurukshetra War of Hindu mythology, transcribed in the Sanskrit
+                epic poem, the Mahabharata. Throughout the rule of the British in India, Haryana was part of East Punjab, which was annexed in 1849 by the East India Company. The present-day state of Haryana was officially inaugurated in 1966 based on
+                language – it was the Hindi-speaking region of historic Punjab.
+            </p>
+        </div>
+        {% endblock %}
+        <br>
+</body>
+
+</html>

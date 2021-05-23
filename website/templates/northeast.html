@@ -1,0 +1,302 @@
+<html>
+
+<head>
+    <title>
+        Northeastern India
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wdbstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <style>
+        h1 {
+            margin-top: 3%;
+            text-align: center;
+            font-size: 35px;
+            margin-left: 20px;
+        }
+        
+        .boxed {
+            border: 2px solid rgb(194, 194, 191);
+            margin: 3%;
+            border-style: outset;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        p {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        img {
+            width: 350px;
+            height: 350px;
+            margin-left: 20px;
+        }
+        
+        .img-fluid {
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+
+        </section>
+        {% block content %}
+        <h1>Welcome to Northeastern India</h1>
+        <div class="boxed">
+            <div class="text-center">
+                <h2>ARUNACHAL PRADESH</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\ARUNACHAL PRADESH1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ARUNACHAL PRADESH2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ARUNACHAL PRADESH3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                The textile patterns found among the tribes of Arunachal Pradesh such as Adi, Mishmi and Apatani are invariably of geometric pattern. Most popular motives are Zig-Zag lines and angular designs. The floral and Zemorphic patterns are more or less geometric
+                form. The simple and straight lines, stripes and Aa bands and similar other patterns are most common. Contrasts and combination of colours are quite popular. The highly disciplined Adi and Apatani concentrate on simple straight line, while
+                the strongly individualistic Mishmis go in for great celebration of pattern.The Adi have a great variety of straight forward patterns. There are arrangements of red and black strips on white ground, white and yellow strips on a black ground
+                alternate bands of red and black ground, white bands of red and black or of olive green and brown, broad border-bands of brown with a central narrow strips of black and white and the body of the cloth being black with brown black and white
+                strips at a three-inch interval.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>ASSAM</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\ASSAM1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ASSAM2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\ASSAM3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Churia or Dhuti It was an unstitched main male dress in medieval age. It was 8 to 16 cubits long and from 2 to 2.25 cubits wide. It was plain and free from any decoration. A few ethnic groups were woven endi-dhuti for cold season. The cloth was worn round
+                the waist and hanging down to the knee or below it. At the beginning, this „churia’ or „dhuti’ was held tight round the waist with a sort of girdle called „parivesa’, which was also known as „Komarbandh’ (like modern belt). In this period,
+                the higher officials, the head of the satras and Brahmin used silk and muga churia, which extended below the knee. In religious function or to worship of God, red coloured silk dhuties were mostly preferred by priest. According to the
+                Guru-charit, the „churia’ was called as „Bhuni’
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>MEGHALAYA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\MEGHALAYA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MEGHALAYA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MEGHALAYA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Meghalaya is the homeland of three ancient hill communities, the Khasi, Jaintias and Garos, and is a land of considerable natural beauty. The important crafts are cane and bamboo works, artistic weaving and woodcarving. Weaving is the traditional occupation
+                of Garo women and is currently pursued by almost every family. The production of cotton textile items is restricted by and large restricted to dakmanda, worn from the waist to a little below the knee. The Garos also weave shirting, bedcovers,
+                bed sheets, and tablecloths. The endi silk produced in Meghalaya is famous for its texture and durability. The important center for weaving endi silk is Sonidan, a village of about hundred bamboo huts. Besides Sonidan, women in some other
+                villages carry out endi silk weaving. Moreover, the production of jainsen (typical Meghalaya women’s wear) with local mulberry silk has also been introduced. Silk weaving has generally encouraged through training of local weavers in a
+                number of places, production on commercial lines. Women do weaving in their spare time and use back-strap or loin-looms, the only exception being the garos who also use frame-looms. Endi silk-weaving, famous for its feel and sturdiness,
+                is carried out by the local women.
+            </p>
+            <hr>
+            <div class="text-center">
+                <h2>MANIPUR</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\MANIPUR1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MANIPUR2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MANIPUR3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Manipur is famous for its special fabrics like moiraingphee, leirum, lasingphee and phanek. Tribal textiles are woven on a loin-loom, a type of back-strap loom commonly used by hill people. The warp of manageable length and breadth is prepared and fastened
+                at one end generally to the wall of a house or to two fixed poles while the other is tied to the waist of the weaver with a cotton or leather belt. Sometimes the belt is woven out of cane or bamboo. Weaving is universal and every girl
+                knows how to weave. The loom forms part of her dowry. Weaving is done purely for personal use, by the women, while highly organized commercial weaving is done by men. There is an aura of religion and romance around cotton-weaving. Each
+                process and design is highlighted by a legend and connected with special functions, dances, and ceremonies. Ningthou phee and akoibi are based on snake motifs and the design is worn by royalty. These designs are mostly found on the phaneks.
+                Tradition has it that when a weaver used to sit down to weave the ningthou phee, the royal design, a gun salute would be fired in honor. A black shawl with thick, bold embroidered animal motifs is called the angami naga (sami lami phee).
+                It was given to brave and distinguished warriors by the royalty, in recognition of their prowess and ability. Phaneks are woman’s lungies and the morang phee is the traditional Manipuri sari with a temple border. Likli or bottle designs
+                resembling a loom-accessory and lasing phee (a quilted design to keep warm in winter as Manipur has no wool) are popular. Shamilami is a combination of weaving and embroidery once considered a status symbol.</p>
+            <hr>
+            <div class="text-center">
+                <h2>MIZORAM</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\MIZORAM1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MIZORAM2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MIZORAM3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Mizoram is a state in northeastern India, with Aizawl as its capital city. The name is derived from “Mizo”, the name of the native inhabitants, and “Ram”, which means land, and thus Mizoram means “land of the Mizos”. The culture of Mizoram reflects the
+                quintessential lifestyle and traditional heritage of the inhabitants of the Mizoram, popularly known as the ‘Songbird of the North east’. The people of Mizoram are collectively known as the Mizo. The textiles of Mizoram constitute one
+                of the most significant art and crafts of the region. The textile industry of Mizoram offers a variety of garments, which are quite popular in the north-western part of the country of India. Many Mizo people are well known as skilled weavers.
+                Weaving is one of the most important segments of the cultural life of the people of this state. The women are involved in weaving in Mizoram from a very early age.</p>
+            <hr>
+            <div class="text-center">
+                <h2>NAGALAND</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\NAGALAND1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\NAGALAND2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\NAGALAND3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Nagaland is a state in northeastern India. Nagaland is home to several tribes. Each tribe uses bold distinctive patterns with simple clean lines, stripes, squares, and bands and has its own specific designs and motifs for shawls and sarongs. Common colours
+                are black or white with red and green motifs for introducing an extra weft. The combinations and the designs have tremendous social significance and symbolic meaning. The dress a person wears reveals his/her standing in the tribal hierarchy.
+                The dress materials for daily use are produced with the help of the age old looms by the Naga females and the end product is surely a visual enchantment.</p>
+            <hr>
+            <div class="text-center">
+                <h2>TRIPURA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\TRIPURA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TRIPURA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\TRIPURA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Tripura is one of the third smallest states of India, with boundaries of the state meet Assam and Mizoram and the international borders meet Bangladesh. Tripura is also included in seven sister states along the North-Eastern border of India. Agartala
+                is the capital of Tripura. Tripura Traditional Costumes are very simple. The North-Eastern states influence a lot on the tradition and culture of Tripura. Here the people follow the similar tradition and wearing clothing styles of other
+                north-eastern states. But the outfits are totally different and designs and patterns also quite different from other states of India. Generally, Tripura is a hilly area surrounded by natural beauties. Here the weavers very experienced
+                and very experts to create stunning designs on the clothes. They are very talented to weave the dresses for kids, youngsters and elders. Tripura region contains various group of Tribes; the main tribes are Lushei, Khakloo, Kuki-Chin, and
+                Hallam. These tribes weave their traditional outfits.</p>
+            <hr>
+            <div class="text-center">
+                <h2>SIKKIM</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\SIKKIM1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\SIKKIM2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\SIKKIM3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Lepcha weaves or ‘thara’ is woven in vertical looms with a backstrap. Such looms are of small width. Traditional design with different colours are used to make tharas which are used for making bedspreads, bags, belts, curtains, cushion covers, table mats,
+                tray cloths etc, apart from their traditional dress. Lepcha women folk work on traditional back-strap loin- looms that enhances the quality of the fabric. The vertical frame loom with a back strap used by the Lepcha women is indigenous
+                in Sikkim. The weave frame is made from bamboo or various types of wood which is available. Nearly all types of weaves can be woven in the loin loom. On a loin loom, the possibilities of weaving pattern are unlimited. The cloth woven by
+                the women is used for women’s traditional coat material. Cotton yarn is the basic material where as the woolen yarn is utilized for the motifs over the coat. The raw material used by the Lepchas for their garments is cotton, and for blankets
+                they use sheep wool. Lepchas rear their own sheep for the wool and some wool is also bought from local traders. The yarn is dyed and dried for at least a week before being put on loom for weaving. Both vegetable dyes and synthetic colour
+                are used in dyeing. The colours are mainly white, black, red, yellow and green etc. The handloom products are ranged from plain to intricate patterns. Traditionally sheep wool was used, but with the intervention of the Directorate of Handlooms
+                and Handicrafts now cotton and acrylic is also being used. Therefore, attractive colour combination and designs can be made today.
+            </p>
+
+        </div>
+        {% endblock %}
+        <br>
+</body>
+
+</html>

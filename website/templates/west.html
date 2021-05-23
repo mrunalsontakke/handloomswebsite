@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <title>
+        Western India
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wdbstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            margin-top: 3%;
+            text-align: center;
+            font-size: 35px;
+            margin-left: 20px;
+        }
+        
+        .boxed {
+            border: 2px solid rgb(194, 194, 191);
+            margin: 3%;
+            border-style: outset;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        p {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 20px;
+        }
+        
+        img {
+            width: 350px;
+            height: 350px;
+            margin-left: 20px;
+        }
+        
+        .img-fluid {
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+
+        </section>
+        {% block content %}
+        <h1>Welcome to Western India</h1>
+        <div class="boxed">
+            <div class="text-center">
+                <h2>GUJARAT</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\GUJARAT1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\GUJARAT2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\GUJARAT3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Gujarat is the place to visit if you are on a textile tour of India. The state excels in both quality and designs of textiles, both customary and recent. Gujarat has a large flourishing textile industry that contributes to the arts and crafts of India.
+                The textiles have a large variety to offer to the end consumers. It mainly depends on factors like varied raw materials, the combination of yarns and effective use of traditional techniques. The enriched range of textiles owes to the people
+                of different communities, castes, tribes and regions of the state, who have kept the age-old tradition alive. The main traditional place in `Patan’ where only the `Salvi’ family makes it. Now also manufactured in Rajkot and Khambat. Today
+                some weavers have resettled in Pochampally and also make ikat design similar to Patola but usually only warp and weft and weft are tied and dyed, they are called `Hyderabadi Patola’ or single Ikat fabrics. Double Ikat i.e. warp and weft
+                yarns are both tie-n-dyed. Then woven on a simple two harness handloom made of rosewood and bamboos. Originally wax threads were used for resist tying (now rubber tyres). Lehariya is also a type of tie-n-dye where the design is made of
+                diamond strips. Very fine fabric is used. It is easy to identify as it has uneven width strips throughout the length. That is how it can be identified from fake printed versions which are of even width throughout. Real laheriya has even
+                broad colour strips outside and thinner coloured strip as you move inside with more white in it. It is normally of a single colour.
+            </p>
+
+            <hr>
+            <div class="text-center">
+                <h2>GOA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\GOA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\GOA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\GOA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                The Kunbi tribe is believed to be the oldest tribe of Goa. This tribal community is industrious and hard-working, with the advent of the Portuguese rule in Goa these people originally Hindus, were converted to Christians. However, their culture and rituals
+                have a touch of Hinduism. The Kunbi dance is a famous dance with the Kunbi women dancers dancing to the beats wearing brightly coloured Kunbi saris. This saree was originally worn by Kunbi and Gawda tribe women who were paddy field workers.
+                This community is closer to nature. This is the main reason the drape of this saree is simple, the length is just below the knee and gives freedom to the Kunbi workers to carry on with their daily chores and hard field works. Though the
+                saree is not easily available in the market nowadays, these tribal women still adore this drape of saree and prefer wearing it the same way, but using other cotton sarees or even synthetic sarees. Originally the Kunbi saree was dyed in
+                red and black and woven in small and large checks. The dye was obtained from a recipe of iron ore, rice kanji (starch) and vinegar. All this abundantly found in Goa. This saree was originally worn without the choli; however, it was worn
+                with a simple blouse having puffed sleeves. The traditional Kunbi women used to adorn themselves with simple glass red and green bangles and with strands of black beads necklace. Although this saree has got its traditional roots and is
+                considered very ethnic, the weave on the saree is a simple checkered look, differentiating it to be in the class of geometric designs from the textile designers point of view. The saree is almost extinct in the lights of modernization.
+            </p>
+
+            <hr>
+
+            <div class="text-center">
+                <h2>MAHARASHTRA</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="static\images\about\MAHARASHTRA1.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MAHARASHTRA2.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                        <div class="col">
+                            <img src="static\images\about\MAHARASHTRA3.jpg" class="img-fluid" style="width: auto;"><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="padding-right: 20px; text-align: justify;">
+                Maharashtra has a wide range of textiles of varied designs & manufactured by different techniques. The speciality in the weave of the textiles in each region is developed based on location, climate and cultural influences. Suited Fabrics are used to the
+                climate of Maharashtra. Primarily used fabrics are cotton and silk. The traditional attire of men in Maharashtra is the Dhotar and Sadra, a kurta with pockets on both sides. A waistcoat known as Bandi is also worn at times inside the shirt.
+                Most of the elderly men wear Topi and Pheta, a freshly folded turban made of cotton or silk fabric. Pitambar is pure silk dhoti with a zari border worn during puja or any ritual. The “Lugade” or Nauvari sadi (nine yard sari) is the traditional
+                attire of the women of Maharashtra which is worn along with a short-sleeved Choli or Polka. Teenager girls wear Parkar & Polka and boys wear half pant & shirt. Dhoti for men & Nauvari for women is with Kashti style, where two ends of dhoti,
+                outer one which is pleated in front & another is pleated and taken at back tuck through the legs called as Kashta or Kashti. The Brahmin ladies divide pleats into unequal parts, less on the left side and more on the right. Then the division
+                fold is pleated with the border on the right side neatly placed out and tucked behind known as ‘Kashti’. The last pleat on the right side with the bottom end is taken and secured on the left-hand side. This is called ‘Ocha’. This can be
+                used as a pouch to keep valuables. The shoulder is covered with the Pallu from behind. Pleats are called Nirya. The front side of the waistline tied fastened with at waist in front are called ‘kela’.
+            </p>
+        </div>
+        {% endblock %}
+        <br>
+</body>
+
+</html>

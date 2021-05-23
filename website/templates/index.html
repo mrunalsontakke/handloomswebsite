@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <title>
+        Home - India Handlooms website
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/javascript/button.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<style>
+    body {
+        background-image: url("static/images/icon/bg3.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
+
+<body>
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    <img src="\static\images\icon\logo1.png" alt="" width="60" height="60"> India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+        </section>
+
+
+
+
+        <section id="start">
+            <!-----start----->
+            <div>
+                <div class="start-content">
+                    <label style="background: rgba(160, 160, 160, 0.5);padding-left: 10px; padding-right:10px ;border-radius:0.5em;"><h2> Welcome to India's Prestigious Handloom Products</h2></label><br>
+                    <BR>
+                </div>
+                <label style="background: rgba(160, 160, 160, 0.5);padding-left: 10px; padding-right:10px ;border-radius:0.5em;"><h2>  Let's  take  a  Tour  </h2></label><br>
+                <BR>
+                <button type="button" class="btn btn-primary" style="background-color: black; outline-color: rgb(250, 244, 244);"> <a class="smoothScroll" href="#whyhandloom">CLICK HERE</a></button>
+
+            </div>
+        </section>
+
+    </header>
+    <section class="smoothScroll" id="whyhandloom">
+        <!-----whyhandloom----->
+        <div style="background-color: rgba(255, 255, 255, 0.75); border-radius: 25px;"><br>
+            <h1>Why Handloom of India ?</h1>
+            <div class="whyhandloom-content">
+                Indian handloom sector is an age-old industry employing the rural people at a large level. They have separate space in the Indian economy. The handloom industry is considered the largest cottage industry in the country. The sector is leading the second
+                position after agriculture in providing employment. They are producing eco-friendly products. Raw materials are taken from agriculture, therefore, the continuous market for agricultural produce. This shows the dexterity and artistic ability
+                of weavers to produce attractive products. They are changing their products based on market needs and aspirations. Industry can strongly say that their product is unique. The major part of the textile industry, like spinning, weaving ,
+                fabric processing and garment-making units, have given about one-fifth of India’s total industrial output and the GDP rate of the handloom industry is about 7 per cent.
+                <br><br>Click on the link below to know more details about Handloom Weavers.<br>
+
+            </div>
+            <button type="button" class="btn btn-primary"><a href="database" style="color: white;">Know More>></a></button>
+        </div>
+    </section>
+    <section>
+        <!------Slider------->
+        <div id="slider">
+            <div id="headerSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#headerSlider" data-slide-to="1"></li>
+                    <li data-target="#headerSlider" data-slide-to="2"></li>
+                    <li data-target="#headerSlider" data-slide-to="3" class="active"></li>
+                    <li data-target="#headerSlider" data-slide-to="4"></li>
+                    <li data-target="#headerSlider" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="../static/images/img/slider0.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/images/img/slider4.jpg">
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/images/img/slider5.jpg">
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/images/img/slider6.jpg">
+
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/images/img/slider7.jpg">
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/images/img/slider8.jpg">
+
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="knowmore">
+        <!-----about----->
+        <div style="background-color: rgba(255, 255, 255, 0.75); border-radius: 25px;"><br>
+            <h2>About Handloom Sector</h2>
+            <div class="knowmore-content">
+                Indian handloom industry is deeply rooted in the sociocultural traditions with a rich heritage of skills and talent that needs to be preserved, perpetuated and promoted. India has regionally distinct varieties of handlooms like Ikats from Andhra Pradesh
+                and Orissa, tie and dye from Gujarat and Rajasthan, brocades from Banaras, Pashmina from Kashmir and many more. Kalamkari printing technique from Andhra Pradesh still uses natural pigments obtained from the flowers, leaves, barks of local
+                trees and chemicals obtained from clay and river sands for the fabrics.To understand more about how the handloom industry has changed today in terms of design, marketing, and training of weavers, we met sales executives and designers associated
+                with the Telangana handlooms.
+            </div>
+            <button type="button" class="btn btn-primary"><a href="about" style="color: white;">Read More>></a></button>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>

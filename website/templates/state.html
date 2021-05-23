@@ -1,0 +1,177 @@
+<html>
+
+<head>
+    <title>
+        State - India Handlooms website
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="\static\images\icon\logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loginstyle.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+
+
+{% block content %}
+<style>
+    body {
+        background-image: url(../static/images/img/state1.jpg);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-attachment: fixed;
+    }
+</style>
+
+<body style="background-color:rgb(243, 252, 253);">
+    <header>
+        <!-------Navigationbar------>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/" style="color: white;">
+                    <img src="\static\images\icon\logo1.png" alt="" width="60" height="60"> India Handlooms
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="Home" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="about" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="database" href="/database">WEAVERS DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact" href="/contact">CONTACT US</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="profile" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+        </section>
+        <!--<div style="background-image: url(../images/img/stateimg.jpeg);">-->
+        <br><br><br>
+        <h3>Handlooms in {{title}}</h3>
+        <style>
+            h3 {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                text-align: center;
+                font-weight: bold;
+                background-size: contain;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 35px;
+            }
+        </style>
+        <br>
+        <div class="search">
+            <div class="row">
+                <div>
+                    <h4>Search For : {{ tag}}</h4>
+                    <style>
+                        h4 {
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            text-align: center;
+                            font-weight: bold;
+                            font-weight: 900;
+                            font-style: italic;
+                            margin-left: 100px;
+                            color: white;
+                            overflow-y: hidden;
+                            /* Hide vertical scrollbar */
+                            overflow-x: hidden;
+                            /* Hide horizontal scrollbar */
+                        }
+                    </style>
+                </div>
+                <div class="col-4">
+                    <form action="" method="post" autocomplete="off">
+                        <div class="row">
+                            <div class="col-7">
+                                <input type="text" class="form-control" name="tag" id="tag" placeholder="Enter product name" />
+                            </div>
+                            <div class="col-4" align-items="margin-left">
+                                <input type="submit" value="Search" class="form-control btn btn-primary " name="">
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+
+            <div class="container">
+                <table class="table">
+                    <style>
+                        table,
+                        th,
+                        td,
+                        thead {
+                            text-align: center;
+                            border: 3px solid black;
+                            font-family: 'Times New Roman', Times, serif;
+                            background-color: rgb(248, 250, 246);
+                            font-size: large;
+                            font-weight: 900;
+                            font-style: italic;
+                            border-collapse: collapse;
+                        }
+                    </style>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">More Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in user %}
+                        <tr>
+                            <td>{{ u.id }}</td>
+                            <td>{{ u.company_Name }}</td>
+                            <td>{{ u.first_name }}</td>
+                            <td>{{ u.product_name }}</td>
+                            <td>
+                                <a href="/state/{{title}}/info/{{u.id}}">Info</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </header>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,151 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        width: 100%;
+        height: 100vh;
+        background-image: url('../images/img/indeximage.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .navbar-brand {
+        width: 25%;
+        text-align: center;
+    }
+    
+    #nav-bar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        height: 30px;
+        text-transform: uppercase;
+    }
+    
+    .navbar-nav li {
+        padding: 0 10px;
+    }
+    
+    .navbar-nav li a {
+        float: right;
+        text-align: left;
+    }
+    
+    #nav-bar ul li a:hover {
+        color: #4446bb!important;
+    }
+    
+    .navbar {
+        background: rgb(5, 5, 61);
+    }
+    
+    .smoothScroll {
+        text-decoration: none;
+        font-family: Segoe UI;
+        margin: 24px;
+    }
+    
+    .navbar-toggler {
+        border: white!important;
+        background-color: white;
+    }
+    
+    .navbar-toggler-icon {
+        color: white;
+        background-color: white;
+    }
+    
+    .nav-link {
+        color: rgb(252, 249, 249)!important;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+    #start {
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgb(250, 248, 248);
+    }
+    /*-------SLIDER------*/
+    
+    #slider {
+        width: 70%;
+        padding-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: initial!important;
+    }
+    
+    .carousel-caption h5 {
+        color: #fff;
+        font-size: 42px;
+    }
+    /*-------knowmore------*/
+    
+    #knowmore {
+        color: #555;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    #knowmore .btn {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .knowmore-content {
+        padding-top: 20px;
+        display: flex;
+        text-align: justify;
+        margin-left: 150px;
+        margin-right: 150px;
+        font-size: 18px;
+    }
+    /*-------whyhandloom------*/
+    
+    #whyhandloom {
+        color: #555;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #whyhandloom .btn {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .whyhandloom-content {
+        padding-top: 20px;
+        display: flex;
+        text-align: justify;
+        margin-left: 150px;
+        margin-right: 150px;
+        font-size: 18px;
+    }
